@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:10:16 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/05 16:41:07 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/06 22:31:30 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,14 @@ static t_Map *fill_map(char *av)
     t_Map *map;
     int     h;
 
-    h = map_height(av); // done
+    h = map_height(av);
     if (h < 1)
     {
         ft_putstr("Error\n invalide map");
         exit(1);
     }
-    map = init_map_height(h); // done
-    parse_map_file(map, av); // done
+    map = init_map_height(h);
+    parse_map_file(map, av);
     map->x = ft_strlen1(map->map[0]);
 	return (map);
 }

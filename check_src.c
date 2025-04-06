@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 21:29:07 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/05 21:51:47 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/06 22:41:52 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,29 +49,16 @@ void	check_srcnum(t_Map *map, int p, int e, int c)
 		exit(1);
 	}
 	if (p > 1 || e > 1)
-	{void	check_srcnum(t_Map *map, int p, int e, int c)
-{
-	if (!p || !e || !c)
-	{
-		ft_putstr("Error\nInvalid map characters\n");
-		free_map(map);
-		exit(1);
-	}
-	if (p > 1 || e > 1)
 	{
 		ft_putstr("Error\nInvalid map characters\n");
 		free_map(map);
 		exit(1);
 	}
 	map->collect = c;
-	check_valid_chars(map);
-}
-	}
-	map->collect = c;
-	check_valid_chars(map);
+	check_valid_src(map);
 }
 
-void	check_vsrc(t_Map *map)
+void	check_valid_src(t_Map *map)
 {
 	int	x;
 	int	y;

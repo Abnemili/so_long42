@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:48:35 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/05 21:49:25 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/06 20:24:56 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_Map *check_map(char *av)
 {
     t_Map   *map;
     
-    check_ext(av); // done
+    check_ext(av);
 	map = fill_map(av);
 	if (map->x > 3840 || map->y > 2160)
 	{
@@ -40,6 +40,7 @@ t_Map *check_map(char *av)
 	check_shape(map);
 	check_walls(map);
 	check_src(map);
-	check_path(av, map);// still in progress
+	check_path(av, map);
+	return (map);
 }
 

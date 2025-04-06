@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:09:25 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/05 21:47:40 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/06 22:44:08 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,11 @@ void	check_walls(t_Map *map);
 void check_src(t_Map *map);
 void	check_vsrc(t_Map *map);
 void	check_srcnum(t_Map *map, int p, int e, int c);
-void count_src(t_Map *map, int *p, int *e, int *c)
+void count_src(t_Map *map, int *p, int *e, int *c);
+int ft_strncmp(const char *s1, const char *s2, size_t n);
+void check_path(char *av, t_Map *map);
+static int map_height(char *av);
+void flood_file(t_Map *map, int x, int y, int *flag);
 
 
 
