@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:43:41 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/06 22:18:08 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/07 22:40:19 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int main (int ac, char **av)
         return (1);
     }
     map = check_map(av[1]);
-    play_game(map); // not yet 
+    play_game(map); // in progress
 }

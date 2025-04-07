@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:48:35 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/06 20:24:56 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/06 22:59:47 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void check_ext(char *name)
 	const char *ext = ".ber";
 	int len = ft_strlen(name);
 
-	if (len < 5 || ft_strncmp(name + len - 4, ext, 4) != 0)
+	if (len < 4 || ft_strncmp(name + len - 4, ext, 4) != 0)
 	{
 		ft_putstr("Error\n invalide map name");
 		exit(1);

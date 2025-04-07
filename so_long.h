@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:09:25 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/06 22:44:08 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/07 23:12:43 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 # include <fcntl.h>
 # include "get_line/get_next_line.h"
-//# include <mlx.h>
+# include <mlx.h>
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -62,8 +62,16 @@ int ft_strncmp(const char *s1, const char *s2, size_t n);
 void check_path(char *av, t_Map *map);
 static int map_height(char *av);
 void flood_file(t_Map *map, int x, int y, int *flag);
-
-
-
-
+void	mlx_connection(t_Map *map);
+void	play_game(t_Map *map);
+void	render_map(t_Map *map);
+void	load_textures(t_Map *map);
+void *lookup_tile_image(t_Map *map, int row, int col);
+void apply_tile_texture(t_Map *map, void *img, int x, int y);
+void apply_tile_texture(t_Map *map, void *img, int x, int y);
+void	move_player(t_Map *map, int keycode, int *count);
+static void	handle_movement(t_Map *map, int keycode, int *count, int *collected);
+static int	is_valid_move(t_Map *map, int dx, int dy, int collected);
+static void	update_player_position(t_Map *map, int dx, int dy, int *count);
+int	close_window(t_Map *map);
 #endif
