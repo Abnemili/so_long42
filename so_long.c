@@ -6,11 +6,30 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:47:08 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/07 22:53:28 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/07 23:35:48 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_putnbr(int n)
+{
+	long	nb;
+
+	nb = (long int)n;
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb *= -1;
+	}
+	if (nb < 10)
+		ft_putchar(nb + '0');
+	else
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+}
 
 void	render_map(t_Map *map)
 {

@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 20:15:49 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/06 20:17:13 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/07 23:36:04 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,9 @@ void flood_file(t_Map *map, int x, int y, int *flag)
 	flood_file(map, x + 1, y, flag);
 	flood_file(map, x, y - 1, flag);
 	flood_file(map, x, y + 1, flag);
+}
+
+void	ft_putchar(char c)
+{
+	write(0, &c, 1);
 }

@@ -6,11 +6,25 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 22:56:11 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/07 22:59:36 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/07 23:32:41 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	free_images(t_Map *map)
+{
+	if (map->exit)
+		mlx_destroy_image(map->mlx, map->exit);
+	if (map->free_space)
+		mlx_destroy_image(map->mlx, map->free_space);
+	if (map->player)
+		mlx_destroy_image(map->mlx, map->player);
+	if (map->collection)
+		mlx_destroy_image(map->mlx, map->collection);
+	if (map->wall)
+		mlx_destroy_image(map->mlx, map->wall);
+}
 
 static void	update_player_position(t_Map *map, int dx, int dy, int *count)
 {
@@ -72,6 +86,6 @@ void	move_player(t_Map *map, int keycode, int *count)
 		&& c == map->collect)
 	{
 		ft_putstr("You win!\n");
-		key_hook(65307, map);
+		handle_key_input(65307, map);
 	}
 }

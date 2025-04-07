@@ -6,11 +6,26 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:48:35 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/06 22:59:47 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/07 23:22:40 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+
+void	free_map(t_Map *map)
+{
+	int	i;
+
+	i = 0;
+	while (map->map[i])
+	{
+		free(map->map[i]);
+		i++;
+	}
+	free(map->map);
+	free(map);
+}
 
 void check_ext(char *name)
 {

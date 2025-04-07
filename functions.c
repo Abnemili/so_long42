@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:45:58 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/05 16:38:28 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/07 23:37:48 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ int	ft_strlen1(char *str)
 		i++;
 	return (i);
 }
-int	ft_strlen(char *str)
-{
-	int	i;
+// int	ft_strlen(char *str)
+// {
+// 	int	i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	while (str[i])
+// 		i++;
+// 	return (i);
+// }
 
 void	ft_putstr(char *str)
 {

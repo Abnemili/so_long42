@@ -6,13 +6,13 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:10:16 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/06 22:31:30 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/07 23:41:41 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int map_height(char *av)
+int map_height(char *av)
 {
     int fd;
     int h;
@@ -37,13 +37,13 @@ static t_Map *init_map_height(int h)
     if (!map)
 		ft_fail();
     map->y = h;
-    map->map = maloc(sizeof(char*) * (h + 1));
+    map->map = malloc(sizeof(char*) * (h + 1));
     if (!map->map)
 		(free(map), ft_fail());
 	return (map);
 }
 
-static void parse_map_file(t_Map *map, char *av)
+void parse_map_file(t_Map *map, char *av)
 {
     int     fd;
     int     h;
@@ -65,7 +65,7 @@ static void parse_map_file(t_Map *map, char *av)
 	map->map[h] = NULL;
 }
 
-static t_Map *fill_map(char *av)
+t_Map *fill_map(char *av)
 {
     t_Map *map;
     int     h;
