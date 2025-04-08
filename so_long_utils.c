@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:51:17 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/07 23:38:35 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/08 15:24:51 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	load_textures(t_Map *map)
 	if (!map->exit || !map->free_space || !map->player || !map->collection
 		|| !map->wall)
 	{
+		printf("=====");
 		ft_putstr("Error: Failed to load one or more images\n");
 		handle_key_input(65307, map);
 		exit(1);

@@ -6,15 +6,15 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 20:15:49 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/07 23:36:04 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/08 15:20:20 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void flood_file(t_Map *map, int x, int y, int *flag)
+void	flood_file(t_Map *map, int x, int y, int *flag)
 {
-    if (y < 0 || y >= map->y || x < 0 || x >= map->x || map->map[y][x] == '1')
+	if (y < 0 || y >= map->y || x < 0 || x >= map->x || map->map[y][x] == '1')
 		return ;
 	if (map->map[y][x] == 'C')
 		map->check_c++;
