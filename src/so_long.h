@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:09:25 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/08 15:45:32 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/08 17:36:14 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include <fcntl.h>
-# include "get_line/get_next_line.h"
+# include "../get_line/get_next_line.h"
 # include <mlx.h>
 # include <stddef.h>
 # include <stdio.h>

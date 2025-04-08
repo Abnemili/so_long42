@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:47:08 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/08 15:51:35 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/08 16:52:18 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ void	render_map(t_Map *map)
 		{
 			img = lookup_tile_image(map, i, j);
 			apply_tile_texture(map, img, x, y);
-			x += 64;
+			x += 32;
 			j++;
 		}
-		y += 64;
+		y += 32;
 		i++;
 	}
 }

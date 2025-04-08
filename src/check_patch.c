@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 13:11:09 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/08 15:48:56 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/08 16:02:02 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	check_path(char *av, t_Map *map)
 	int		x;
 	int		y;
 	int		i;
-	int		j;
 	int		flag;
 
 	map_cpy = fill_map_cpy(av);

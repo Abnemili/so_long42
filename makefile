@@ -11,22 +11,29 @@ MLX_FLAGS = -lmlx -lXext -lX11
 # Source Files and Objects
 # -----------------------------------------------------------------------------
 
-SRCS =	main.c \
-		check_map.c \
-		check_p_utils.c \
-		check_src.c \
-		fill_map.c \
-		help.c \
-		so_long.c \
-		check_patch.c \
-		check_shape.c \
-		check_walls.c \
-		functions.c \
-		so_long_utils.c \
-		./get_line/get_next_line.c \
-		./get_line/get_next_line_utils.c
+SRCS =  src/main.c \
+        src/check_map.c \
+        src/check_p_utils.c \
+        src/check_src.c \
+        src/fill_map.c \
+        src/help.c \
+        src/so_long.c \
+        src/check_patch.c \
+        src/check_shape.c \
+        src/check_walls.c \
+        src/functions.c \
+        src/so_long_utils.c \
+        ./get_line/get_next_line.c \
+        ./get_line/get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
+
+# Adjust OBJS to include the 'src/' prefix for the main object files
+OBJS_MAIN = $(patsubst src/%.c,src/%.o,$(filter src/%,$(SRCS)))
+OBJS_GNL = $(SRCS:.c=.o)
+OBJS_GNL := $(filter ./get_line/%,$(OBJS_GNL))
+
+OBJS = $(OBJS_MAIN) $(OBJS_GNL)
 
 # -----------------------------------------------------------------------------
 # Build Rules
@@ -34,10 +41,10 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) so_long.h
+$(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(MLX_FLAGS) -o $(NAME)
 
-%.o: %.c
+src/%.o: src/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 ./get_line/%.o: ./get_line/%.c

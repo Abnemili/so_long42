@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:51:17 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/08 15:52:01 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/08 17:49:22 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,20 +59,19 @@ void	load_textures(t_Map *map)
 	int	img_width;
 	int	img_height;
 
-	map->exit = mlx_xpm_file_to_image(map->mlx, "exit0.xpm", &img_width,
+	map->exit = mlx_xpm_file_to_image(map->mlx, "textur/exit.xpm", &img_width,
 			&img_height);
-	map->free_space = mlx_xpm_file_to_image(map->mlx, "free_space.xpm",
+	map->free_space = mlx_xpm_file_to_image(map->mlx, "textur/free_space.xpm",
 			&img_width, &img_height);
-	map->player = mlx_xpm_file_to_image(map->mlx, "0.xpm", &img_width,
+	map->player = mlx_xpm_file_to_image(map->mlx, "textur/player.xpm", &img_width,
 			&img_height);
-	map->collection = mlx_xpm_file_to_image(map->mlx, "collect_1.xpm",
+	map->collection = mlx_xpm_file_to_image(map->mlx, "textur/items.xpm",
 			&img_width, &img_height);
-	map->wall = mlx_xpm_file_to_image(map->mlx, "wall_1.xpm", &img_width,
+	map->wall = mlx_xpm_file_to_image(map->mlx, "textur/walls.xpm", &img_width,
 			&img_height);
 	if (!map->exit || !map->free_space || !map->player || !map->collection
 		|| !map->wall)
 	{
-		printf("=====");
 		ft_putstr("Error: Failed to load one or more images\n");
 		handle_key_input(65307, map);
 		exit(1);
@@ -88,7 +87,7 @@ void	mlx_connection(t_Map *map)
 		free_map(map);
 		exit(1);
 	}
-	map->win = mlx_new_window(map->mlx, map->x * 64, map->y * 64, "SO_LONG");
+	map->win = mlx_new_window(map->mlx, map->x * 32, map->y * 32, "SO_LONG");
 	if (!map->win)
 	{
 		ft_putstr("Error\nmlx window fail\n");
