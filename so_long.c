@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:47:08 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/07 23:35:48 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/08 15:51:35 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	render_map(t_Map *map)
 		i++;
 	}
 }
+
 int	handle_key_input(int keycode, t_Map *map)
 {
 	static int	count;
@@ -97,12 +98,10 @@ int	close_window(t_Map *map)
 
 void	play_game(t_Map *map)
 {
-	mlx_connection(map); //connection , creation window, destroy connectoin if fail;
+	mlx_connection(map);
 	load_textures(map);
 	render_map(map);
 	mlx_hook(map->win, 2, 1, handle_key_input, map);
 	mlx_hook(map->win, 17, 0, close_window, map);
 	mlx_loop(map->mlx);
 }
-
-// free_space1

@@ -6,13 +6,13 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:51:17 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/08 15:24:51 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/08 15:52:01 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void apply_tile_texture(t_Map *map, void *img, int x, int y)
+void	apply_tile_texture(t_Map *map, void *img, int x, int y)
 {
 	if (!img)
 	{
@@ -29,7 +29,8 @@ void apply_tile_texture(t_Map *map, void *img, int x, int y)
 		exit(1);
 	}
 }
-void *lookup_tile_image(t_Map *map, int i, int j)
+
+void	*lookup_tile_image(t_Map *map, int i, int j)
 {
 	char	current;
 	void	*img;
@@ -77,6 +78,7 @@ void	load_textures(t_Map *map)
 		exit(1);
 	}
 }
+
 void	mlx_connection(t_Map *map)
 {
 	map->mlx = mlx_init();

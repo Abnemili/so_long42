@@ -12,7 +12,6 @@
 
 #include "so_long.h"
 
-
 void	free_map(t_Map *map)
 {
 	int	i;
@@ -27,11 +26,12 @@ void	free_map(t_Map *map)
 	free(map);
 }
 
-void check_ext(char *name)
+void	check_ext(char *name)
 {
-	const char *ext = ".ber";
-	int len = ft_strlen(name);
+	const char	*ext = ".ber";
+	int			len;
 
+	len = ft_strlen(name);
 	if (len < 4 || ft_strncmp(name + len - 4, ext, 4) != 0)
 	{
 		ft_putstr("Error\n invalide map name");
@@ -39,12 +39,11 @@ void check_ext(char *name)
 	}
 }
 
-
-t_Map *check_map(char *av)
+t_Map	*check_map(char *av)
 {
-    t_Map   *map;
-    
-    check_ext(av);
+	t_Map	*map;
+
+	check_ext(av);
 	map = fill_map(av);
 	if (map->x > 3840 || map->y > 2160)
 	{
@@ -58,4 +57,3 @@ t_Map *check_map(char *av)
 	check_path(av, map);
 	return (map);
 }
-

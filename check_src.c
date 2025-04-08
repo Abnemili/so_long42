@@ -6,27 +6,27 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 21:29:07 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/06 22:41:52 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/08 15:37:46 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void count_src(t_Map *map, int *p, int *e, int *c)
+void	count_src(t_Map *map, int *p, int *e, int *c)
 {
-    int x;
-    int y;
-    char current_pos;
+	int		x;
+	int		y;
+	char	current_pos;
 
-    map->free_space_1 = 0;
-    y = 0;
-    while (y < map->y)
-    {
-        x = 0;
-        while (x < map->x)
-        {
-            current_pos = map->map[y][x];
-            if (current_pos == 'P')
+	map->free_space_1 = 0;
+	y = 0;
+	while (y < map->y)
+	{
+		x = 0;
+		while (x < map->x)
+		{
+			current_pos = map->map[y][x];
+			if (current_pos == 'P')
 				(*p)++;
 			else if (current_pos == 'E')
 				(*e)++;
@@ -35,9 +35,9 @@ void count_src(t_Map *map, int *p, int *e, int *c)
 			else if (current_pos == '0')
 				map->free_space_1++;
 			x++;
-        }
-        y++;
-    }
+		}
+		y++;
+	}
 }
 
 void	check_srcnum(t_Map *map, int p, int e, int c)
@@ -83,15 +83,15 @@ void	check_valid_src(t_Map *map)
 	}
 }
 
-void check_src(t_Map *map)
+void	check_src(t_Map *map)
 {
-    int p;
-    int e;
-    int c;
+	int	p;
+	int	e;
+	int	c;
 
-    p = 0;
-    e = 0;
-    c = 0;
-    count_src(map, &p, &e, &c);
-    check_srcnum(map, p, e, c);
+	p = 0;
+	e = 0;
+	c = 0;
+	count_src(map, &p, &e, &c);
+	check_srcnum(map, p, e, c);
 }

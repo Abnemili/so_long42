@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 22:56:11 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/07 23:32:41 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/08 15:52:40 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ static void	update_player_position(t_Map *map, int dx, int dy, int *count)
 	map->player_p[1] += dx;
 	map->player_p[0] += dy;
 	(*count)++;
-	mlx_put_image_to_window(map->mlx, map->win, map->player,
-		map->player_p[1] * 64, map->player_p[0] * 64);
+	mlx_put_image_to_window(map->mlx, map->win, map->player, map->player_p[1]
+		* 64, map->player_p[0] * 64);
 }
 
 static int	is_valid_move(t_Map *map, int dx, int dy, int collected)
@@ -50,6 +50,7 @@ static int	is_valid_move(t_Map *map, int dx, int dy, int collected)
 		return (0);
 	return (1);
 }
+
 static void	handle_movement(t_Map *map, int keycode, int *count, int *collected)
 {
 	int	dx;
