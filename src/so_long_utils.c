@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 20:51:17 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/08 21:01:19 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/09 19:16:17 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	*lookup_tile_image(t_Map *map, int i, int j)
 	if (current == '1')
 		img = map->wall;
 	else if (current == '0')
-		img = map->free_space;
+		img = map->floor;
 	else if (current == 'C')
 		img = map->collection;
 	else if (current == 'P')
@@ -59,17 +59,17 @@ void	load_textures(t_Map *map)
 	int	img_width;
 	int	img_height;
 
-	map->exit = mlx_xpm_file_to_image(map->mlx, "textur/exit.xpm", &img_width,
+	map->exit = mlx_xpm_file_to_image(map->mlx, "xpm/exit.xpm", &img_width,
 			&img_height);
-	map->free_space = mlx_xpm_file_to_image(map->mlx, "textur/free_space.xpm",
+	map->floor = mlx_xpm_file_to_image(map->mlx, "xpm/floor.xpm",
 			&img_width, &img_height);
-	map->player = mlx_xpm_file_to_image(map->mlx, "textur/player.xpm", &img_width,
+	map->player = mlx_xpm_file_to_image(map->mlx, "xpm/player.xpm", &img_width,
 			&img_height);
-	map->collection = mlx_xpm_file_to_image(map->mlx, "textur/items.xpm",
+	map->collection = mlx_xpm_file_to_image(map->mlx, "xpm/items.xpm",
 			&img_width, &img_height);
-	map->wall = mlx_xpm_file_to_image(map->mlx, "textur/walls.xpm", &img_width,
+	map->wall = mlx_xpm_file_to_image(map->mlx, "xpm/walls.xpm", &img_width,
 			&img_height);
-	if (!map->exit || !map->free_space || !map->player || !map->collection
+	if (!map->exit || !map->floor || !map->player || !map->collection
 		|| !map->wall)
 	{
 		ft_putstr("Error: Failed to load one or more images\n");

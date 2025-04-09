@@ -18,7 +18,7 @@ SRCS =  src/main.c \
         src/fill_map.c \
         src/help.c \
         src/so_long.c \
-        src/check_patch.c \
+        src/check_path.c \
         src/check_shape.c \
         src/check_walls.c \
         src/functions.c \

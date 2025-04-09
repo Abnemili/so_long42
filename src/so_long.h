@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:09:25 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/08 17:36:14 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/08 22:05:45 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct map
 	int		player_p[2];
 	void	*player;
 	void	*wall;
-	void	*free_space;
+	void	*floor;
 	void	*collection;
 	void	*exit;
 }			t_Map;

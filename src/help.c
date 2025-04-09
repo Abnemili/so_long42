@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 22:56:11 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/08 21:01:43 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/09 18:29:06 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	free_images(t_Map *map)
 {
 	if (map->exit)
 		mlx_destroy_image(map->mlx, map->exit);
-	if (map->free_space)
-		mlx_destroy_image(map->mlx, map->free_space);
+	if (map->floor)
+		mlx_destroy_image(map->mlx, map->floor);
 	if (map->player)
 		mlx_destroy_image(map->mlx, map->player);
 	if (map->collection)
@@ -28,7 +28,7 @@ void	free_images(t_Map *map)
 
 static void	update_player_position(t_Map *map, int dx, int dy, int *count)
 {
-	mlx_put_image_to_window(map->mlx, map->win, map->free_space,
+	mlx_put_image_to_window(map->mlx, map->win, map->floor,
 		map->player_p[1] * 32, map->player_p[0] * 32);
 	map->player_p[1] += dx;
 	map->player_p[0] += dy;
