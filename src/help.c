@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 22:56:11 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/09 18:29:06 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/12 15:50:53 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ void	move_player(t_Map *map, int keycode, int *count)
 		c++;
 		map->map[map->player_p[0]][map->player_p[1]] = '0';
 	}
-	if (map->map[map->player_p[0]][map->player_p[1]] == 'E'
+	if (map->map[map->player_p[0]][map->player_p
+		[1]] == 'E'
 		&& c == map->collect)
 	{
 		ft_putstr("You win!\n");

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_patch.c                                      :+:      :+:    :+:   */
+/*   check_path.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 13:11:09 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/08 16:02:02 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/12 15:50:15 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	check_path(char *av, t_Map *map)
 	free(map_cpy.map);
 	if (!flag || map_cpy.check_c != map->collect)
 	{
-		ft_putstr("Error\ninvalid last path\n");
+		ft_putstr("Error\ninvalid path\n");
 		free_map(map);
 		exit(1);
 	}

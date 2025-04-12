@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 21:29:07 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/08 15:37:46 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/10 23:29:15 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	check_valid_src(t_Map *map)
 				&& map->map[y][x] != 'C' && map->map[y][x] != '0'
 				&& map->map[y][x] != '1')
 			{
-				ft_putstr("Error\nInvalid map characters\n");
+				ft_putstr("Error\nUnrecognized characters\n");
 				free_map(map);
 				exit(1);
 			}

@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:48:35 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/08 14:34:25 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/10 23:02:45 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_Map	*check_map(char *av)
 
 	check_ext(av);
 	map = fill_map(av);
-	if (map->x > 3840 || map->y > 2160)
+	if (map->x > 1920 || map->y > 1080)
 	{
 		ft_putstr("Error\nthe map is too big!!\n");
 		free_map(map);

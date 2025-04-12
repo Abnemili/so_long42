@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:10:16 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/08 15:39:27 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/12 15:50:29 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	map_height(char *av)
 	h = 0;
 	line = get_next_line(fd);
 	while (line && ++h)
-		(free(line), line = get_next_line(fd));
+	{
+		free(line);
+		line = get_next_line(fd);
+	}
 	close(fd);
 	return (h);
 }
@@ -46,23 +49,23 @@ static t_Map	*init_map_height(int h)
 void	parse_map_file(t_Map *map, char *av)
 {
 	int		fd;
-	int		h;
+	int		row;
 	char	*line;
 
 	fd = open(av, O_RDONLY);
 	if (fd == -1)
 		(free_map(map), ft_putstr("Error\nOpen failed\n"), exit(1));
-	h = 0;
-	while (h < map->y)
+	row = 0;
+	while (row < map->y)
 	{
 		line = get_next_line(fd);
-		map->map[h++] = line;
+		map->map[row++] = line;
 	}
 	line = get_next_line(fd);
 	if (line)
 		free(line);
 	close(fd);
-	map->map[h] = NULL;
+	map->map[row] = NULL;
 }
 
 t_Map	*fill_map(char *av)
@@ -73,7 +76,7 @@ t_Map	*fill_map(char *av)
 	h = map_height(av);
 	if (h < 1)
 	{
-		ft_putstr("Error\n invalide map");
+		ft_putstr("Error\n the map is invalide map");
 		exit(1);
 	}
 	map = init_map_height(h);
