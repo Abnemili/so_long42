@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:48:35 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/10 23:02:45 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:52:03 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	check_ext(char *name)
 	len = ft_strlen(name);
 	if (len < 4 || ft_strncmp(name + len - 4, ext, 4) != 0)
 	{
-		ft_putstr("Error\n invalide map name");
+		ft_putstr("Error\nInvalid map name");
 		exit(1);
 	}
 }

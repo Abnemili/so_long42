@@ -6,7 +6,7 @@
 /*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:10:16 by abnemili          #+#    #+#             */
-/*   Updated: 2025/04/12 15:50:29 by abnemili         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:06:52 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ t_Map	*fill_map(char *av)
 	h = map_height(av);
 	if (h < 1)
 	{
-		ft_putstr("Error\n the map is invalide map");
+		ft_putstr("Error\n the map is invalid");
 		exit(1);
 	}
 	map = init_map_height(h);
